@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mississippi Community Resource Hub - A Mississippi That Works for Everyone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            background: #002855;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .hero {
+            background: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .hero h1 {
+            color: #003d7a;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: #003d7a;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e63946;
+        }
+        
+        h3 {
+            color: #0066cc;
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+        }
+        
+        h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .issue-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #e63946;
+            border-radius: 4px;
+        }
+        
+        .solution-card {
+            background: #e8f4f8;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+        }
+        
+        .stat-highlight {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .example-box {
+            background: #f0f8ff;
+            padding: 1.2rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 4px solid #17a2b8;
+            font-style: italic;
+        }
+        
+        .category-label {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .immediate { background: #d4edda; color: #155724; }
+        .strategic { background: #cce5ff; color: #004085; }
+        .transformational { background: #f8d7da; color: #721c24; }
+        
+        .funding-box {
+            background: #e7f3e7;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border: 2px solid #28a745;
+        }
+        
+        .impact-metric {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #003d7a, #0066cc);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .comparison-table th {
+            background: #003d7a;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: #002855;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="text-align: center; font-size: 1.8rem;">Mississippi Community Resource Hub</h1>
+            <p style="text-align: center; margin-top: 0.5rem;">Real Solutions for Real Challenges</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#issues">Issues</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#resources">Get Involved</a></li>
+                <li><a href="#updates">Updates</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="hero" id="vision">
+        <div class="container">
+            <h1>Here's Where Mississippi Stands.<br>Here's What's Possible.</h1>
+            <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                Every Mississippian deserves opportunity, security, and a voice in our state's future. This resource hub provides clear information about the challenges we face and practical solutions that can work for all of us—regardless of where we live or what we believe.
+            </p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section class="section" id="issues">
+            <h2>The Issues Mississippians Face</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                We can't solve problems we don't understand. Here are the real challenges facing our neighbors, backed by facts and told through our shared experiences.
+            </p>
+            
+            <div class="issue-card">
+                <h3>Economic Hardship: The Daily Struggle</h3>
+                <div class="stat-highlight">
+                    <strong>The Numbers Don't Lie:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Mississippi median household income: $48,716 (US average: $70,784)</li>
+                        <li>19.4% of all Mississippians live in poverty (US average: 11.5%)</li>
+                        <li>27.8% of Mississippi children live in poverty (highest in nation)</li>
+                        <li>39% of Mississippi families are ALICE (Asset Limited, Income Constrained, Employed)</li>
+                        <li>Counties hit hardest: Holmes (34.7% poverty), Humphreys (31.2%), Jefferson (30.6%)</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Sarah's Story - Yazoo City:</strong> Sarah works full-time at the chicken processing plant for $11.50/hour ($23,920/year). Her rent for a two-bedroom apartment is $750/month. After utilities ($180), car payment ($250), insurance ($120), and gas ($150), she has $470 left each month to feed and clothe her three kids, buy medicine when they're sick, and handle any emergency. Last month, her car broke down. The $400 repair meant choosing between fixing it to keep her job or buying groceries. The food bank helped, but she still had to send her kids to school hungry three days that week.
+                </div>
+                
+                <div class="example-box">
+                    <strong>James's Reality - Clarksdale:</strong> James owns a small auto repair shop that his father started 40 years ago. He employs three people but can only pay them $10/hour because business has dropped 40% since the factory closed. He hasn't taken a salary in six months, living off his savings to keep his employees paid. He's one major equipment breakdown away from closing permanently.
+                </div>
+                
+                <p><strong>The Ripple Effect:</strong> When families can't afford basics, local businesses lose customers. When businesses close, jobs disappear. When jobs disappear, young people leave. It's a cycle that's been draining Mississippi communities for decades. In the Delta alone, we've lost 68,000 residents since 2010—that's entire towns worth of teachers, nurses, entrepreneurs, and families.</p>
+            </div>
+            
+            <div class="issue-card">
+                <h3>Healthcare Access Crisis: Life and Death Decisions</h3>
+                <div class="stat-highlight">
+                    <strong>The Healthcare Desert:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>12.4% uninsured rate (362,000 Mississippians without coverage)</li>
+                        <li>6 rural hospitals closed since 2013, 36 more at risk</li>
+                        <li>54 of 82 counties designated as medically underserved</li>
+                        <li>Only 195 primary care physicians per 100,000 people (US average: 241)</li>
+                        <li>Mississippi ranks 50th in overall health outcomes</li>
+                        <li>Infant mortality: 8.8 per 1,000 births (worst in nation)</li>
+                        <li>Maternal mortality: 37.4 deaths per 100,000 births (US average: 20.1)</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Betty's Emergency - Humphreys County:</strong> When 68-year-old Betty had a stroke at 2 AM, her daughter drove 52 miles to the nearest hospital in Greenwood because Humphreys County lost its hospital in 2019. Those extra 30 minutes meant the difference between full recovery and permanent disability. Betty now needs round-the-clock care her family can't afford, and Medicare doesn't fully cover.
+                </div>
+                
+                <div class="example-box">
+                    <strong>Marcus's Diabetes - Indianola:</strong> Marcus, 45, has diabetes but no insurance. The nearest endocrinologist is 90 miles away in Jackson. He rations his insulin, buying it from Mexico online because it costs $340/month at the local pharmacy. Last year, rationing led to a diabetic coma. The emergency room visit cost $18,000. He'll never be able to pay it, and his credit is ruined.
+                </div>
+                
+                <div class="example-box">
+                    <strong>Pregnancy in the Delta:</strong> Ashley lives in Tunica and is six months pregnant. The nearest OB-GYN is 45 miles away in Memphis. She's missed three prenatal appointments because she couldn't afford gas and couldn't get time off work. Mississippi's Black mothers are 2.7 times more likely to die from pregnancy complications than white mothers—Ashley worries she'll become a statistic.
+                </div>
+                
+                <p><strong>The Human Cost:</strong> Every year, an estimated 300 Mississippians die from lack of health insurance. That's not just numbers—that's somebody's parent, child, neighbor. Rural ambulance services are shutting down too. In Calhoun County, there's one ambulance for 14,500 people. If you have a heart attack during another emergency, you wait.</p>
+            </div>
+            
+            <div class="issue-card">
+                <h3>Education Emergency: Failing Our Future</h3>
+                <div class="stat-highlight">
+                    <strong>The Classroom Crisis:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>3,036 certified teacher vacancies (5.4% of all positions)</li>
+                        <li>Starting teacher salary: $37,000 (surrounding states: $42,000-$48,000)</li>
+                        <li>32% of teachers leave within first 5 years</li>
+                        <li>Only 35% of 4th graders read at grade level</li>
+                        <li>Only 20% of 8th graders proficient in math</li>
+                        <li>$3.8 billion in deferred maintenance on school buildings</li>
+                        <li>147 schools rated "D" or "F" (serving 89,000 students)</li>
+                        <li>Digital divide: 34% of students lack reliable internet for homework</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Ms. Johnson's Classroom - Jackson Public Schools:</strong> Ms. Johnson teaches 4th grade with 31 students, no aide, and textbooks from 2008. The ceiling leaks so badly she's arranged desks around the buckets. She spends $200 monthly of her $39,000 salary on basic supplies like pencils and paper. After her second job at Target and weekend tutoring, she makes ends meet, but she's exhausted. Five teachers at her school quit mid-year. "I love these kids," she says, "but I can't afford to keep teaching."
+                </div>
+                
+                <div class="example-box">
+                    <strong>Rural Consolidation - Kemper County:</strong> When East Kemper Elementary closed, 7-year-old Destiny's bus ride went from 20 minutes to 75 minutes each way. She leaves home at 5:45 AM and doesn't return until 5 PM. She's too tired for homework most nights, and her grades are slipping. Her mom can't help—she works two jobs and never finished high school herself.
+                </div>
+                
+                <div class="example-box">
+                    <strong>The Digital Divide - Noxubee County:</strong> During COVID, Timothy had to sit in the McDonald's parking lot to use WiFi for virtual school. Even now, his homework requires internet the family can't afford ($140/month for satellite internet is their only option). His teacher prints extra copies, but Timothy knows he's falling behind kids in towns with broadband.
+                </div>
+                
+                <p><strong>Long-term Impact:</strong> Mississippi students who don't read proficiently by 3rd grade are four times more likely to drop out. Our 17% dropout rate means 5,100 students leave school each year without diplomas. Their lifetime earnings will be $300,000 less than graduates. That's $1.5 billion in lost economic potential every single year.</p>
+            </div>
+            
+            <div class="issue-card">
+                <h3>Infrastructure Collapse: The Systems We Depend On</h3>
+                <div class="stat-highlight">
+                    <strong>Failing Grade Report Card:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Roads: 'D' grade - 27% in poor condition, $6.8 billion backlog</li>
+                        <li>Bridges: 1,295 structurally deficient (10% of all bridges)</li>
+                        <li>Drinking Water: 'D+' grade - systems average 67 years old</li>
+                        <li>Jackson water crisis affected 180,000 people for 6+ months</li>
+                        <li>450+ boil water notices issued annually statewide</li>
+                        <li>Wastewater: 348 systems violating EPA standards</li>
+                        <li>Broadband: 383,000 Mississippians lack any internet access</li>
+                        <li>Electric Grid: 3rd highest outage rate nationally</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>The Jackson Water Crisis - Personal Impact:</strong> For six months, the Williams family couldn't drink, cook with, or bathe in tap water. They spent $400 monthly on bottled water. Their restaurant, Williams' Soul Food, lost $75,000 in revenue and laid off 8 employees. Their daughter missed 15 days of school when buildings closed for lack of water. "We're not just talking about inconvenience," Mr. Williams says. "This destroyed businesses and lives."
+                </div>
+                
+                <div class="example-box">
+                    <strong>Bridge Fear - Sharkey County:</strong> The Highway 14 bridge over Steele Bayou is so deteriorated that school buses take a 20-mile detour. Parents drive separately because they won't put multiple family members on it at once. Emergency vehicles can't use it, adding 15 minutes to response times. The county says repairs need $3 million they don't have.
+                </div>
+                
+                <div class="example-box">
+                    <strong>Small Town Sewage - Belzoni:</strong> When it rains, raw sewage backs up into homes in Belzoni's historic Black neighborhood. The system is 80 years old. Families place their furniture on blocks, knowing the next storm will bring contamination. Children play in yards where sewage surfaces. The EPA fined the city, but fines don't fix pipes—the $45 million needed for repairs equals 15 years of the entire city budget.
+                </div>
+                
+                <p><strong>Economic Drain:</strong> Poor infrastructure costs the average Mississippi driver $637 annually in vehicle repairs and wasted fuel. Businesses won't locate where water isn't reliable or broadband doesn't exist. We're literally watching our competitive advantage crumble beneath us.</p>
+            </div>
+            
+            <div class="issue-card">
+                <h3>Racial Disparities: Two Mississippis</h3>
+                <div class="stat-highlight">
+                    <strong>The Inequality Gap:</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Median household income: White: $58,500 / Black: $31,300</li>
+                        <li>Poverty rate: White: 11.8% / Black: 30.4%</li>
+                        <li>Unemployment: White: 3.2% / Black: 7.8%</li>
+                        <li>Homeownership: White: 74% / Black: 42%</li>
+                        <li>Infant mortality per 1,000: White: 5.9 / Black: 11.8</li>
+                        <li>Life expectancy: White: 75.8 years / Black: 71.3 years</li>
+                        <li>College graduation: White: 36% / Black: 21%</li>
+                        <li>Incarceration rate: Mississippi has highest rate nationally, 71% are Black despite being 38% of population</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Two Schools, One Town - Greenville:</strong> Washington School (95% white) has a robotics lab, new computers, and AP classes. Coleman High (96% Black), three miles away, has no AP physics, broken heating, and textbooks held together with duct tape. Both are public schools in the same district. The difference? Washington's PTA raises $200,000 annually. Coleman's raises $3,000. Property values—and thus local school funding—reflect decades of residential segregation.
+                </div>
+                
+                <div class="example-box">
+                    <strong>Banking Desert - West Jackson:</strong> When the last bank branch left West Jackson (87% Black), residents lost more than ATMs. Ms. Robinson now pays $7 to cash her paycheck at a check-cashing store, $5 per money order for bills, and 400% APR at payday lenders for emergencies. The same $500 emergency that costs someone with banking access $15 in overdraft fees costs Ms. Robinson $200 in payday loan interest.
+                </div>
+                
+                <div class="example-box">
+                    <strong>Environmental Injustice - North Gulfport:</strong> Turkey Creek, a historic Black community, floods constantly while adjacent white neighborhoods stay dry. Why? Infrastructure investments went elsewhere for decades. Now developers want the land, offering buyouts at fraction of fair value. "They ignored us when we needed help," says lifelong resident Charles Evans. "Now they want us gone when the land's valuable."
+                </div>
+                
+                <p><strong>Generational Impact:</strong> These disparities compound over generations. A Black child born in Mississippi today has a 45% chance of experiencing poverty, compared to 13% for a white child. Without intervention, these children face vastly different futures based solely on race—a moral and economic failure that costs Mississippi billions in unrealized potential.</p>
+            </div>
+        </section>
+        
+        <section class="section" id="solutions">
+            <h2>Practical Solutions & How They Work</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                These aren't pie-in-the-sky ideas. They're specific, funded, proven solutions organized by implementation timeline and backed by real success stories.
+            </p>
+            
+            <div class="solution-card">
+                <h3>1. Education Revolution: Building Mississippi's Future</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Teacher Emergency Response (Year 1)</h4>
+                <p><strong>The Plan:</strong></p>
+                <ul>
+                    <li><strong>$50,000 minimum salary immediately</strong> - Requires $385 million annually</li>
+                    <li><strong>$10,000 signing bonuses</strong> for critical shortage areas (math, science, special ed)</li>
+                    <li><strong>Student loan forgiveness</strong> - $5,000/year for 4 years in Title I schools</li>
+                    <li><strong>Rural teacher housing</strong> - Partner with USDA to provide $400/month rental homes near schools</li>
+                    <li><strong>Emergency retention bonuses</strong> - $2,500 for every current teacher who stays</li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>How We Pay:</strong>
+                    <ul>
+                        <li>Reallocate $200M from administrative overhead (Mississippi spends 18% above national average on administration)</li>
+                        <li>Use $100M in federal COVID education recovery funds (available through 2024)</li>
+                        <li>Lottery education proceeds: $85M annually currently underutilized</li>
+                        <li>Total Year 1 Cost: $385M (5.5% increase to education budget)</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Proven Success - Alabama:</strong> When Alabama raised starting teacher pay to $47,500 in 2022, teacher applications increased 31% in one year. Shortage areas saw 45% more applicants. Rural districts that couldn't fill positions for years had multiple candidates per opening. Birmingham schools report 89% teacher retention, up from 74%.
+                </div>
+                
+                <p><strong>Expected Impact for Mississippi:</strong></p>
+                <div>
+                    <span class="impact-metric">2,000+ teacher vacancies filled in Year 1</span>
+                    <span class="impact-metric">Class sizes reduced by 20%</span>
+                    <span class="impact-metric">$450M economic boost from teacher spending</span>
+                </div>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> 21st Century Learning (Years 2-5)</h4>
+                <p><strong>The Comprehensive Upgrade:</strong></p>
+                <ul>
+                    <li><strong>Universal Pre-K rollout</strong>
+                        <ul>
+                            <li>Phase 1 (Year 2): 25 highest-poverty districts - $125M</li>
+                            <li>Phase 2 (Year 3): 25 additional districts - $125M</li>
+                            <li>Phase 3 (Year 4-5): Statewide completion - $250M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Innovation Labs in every high school</strong>
+                        <ul>
+                            <li>3D printers, robotics equipment, coding computers</li>
+                            <li>Partner with Mississippi businesses for $50M in equipment donations</li>
+                            <li>Train 500 teachers in STEM instruction</li>
+                        </ul>
+                    </li>
+                    <li><strong>Career Academies</strong>
+                        <ul>
+                            <li>Healthcare pathway with UMMC: 2,000 students/year</li>
+                            <li>Advanced manufacturing with Nissan/Toyota: 1,500 students/year</li>
+                            <li>Agriculture tech with Mississippi State: 1,000 students/year</li>
+                        </ul>
+                    </li>
+                    <li><strong>Literacy Coaches</strong> - One for every elementary school (425 positions)</li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Strategic Funding Sources:</strong>
+                    <ul>
+                        <li>Federal Preschool Development Grants: $150M over 3 years</li>
+                        <li>Corporate partnerships (commitments from Entergy, C Spire, BankPlus): $50M</li>
+                        <li>Workforce Innovation and Opportunity Act: $75M annually</li>
+                        <li>21st Century Community Learning Centers: $40M annually</li>
+                        <li>Total 4-Year Investment: $750M ($187.5M/year)</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>North Carolina Success Story:</strong> Their Career and College Promise program, connecting high schools with community colleges, saw 65,000 students earn college credit while in high school. Participants were 24% more likely to graduate college. The state saved families $130 million in tuition costs. Manufacturing companies report 40% better-prepared entry-level workers.
+                </div>
+                
+                <h4><span class="category-label transformational">Transformational Change</span> Complete Infrastructure Overhaul (10-Year Plan)</h4>
+                <p><strong>Rebuilding from the Ground Up:</strong></p>
+                <ul>
+                    <li><strong>Phase 1 (Years 1-3): Emergency Repairs</strong>
+                        <ul>
+                            <li>Fix roofs, HVAC, and safety hazards in 200 worst buildings - $600M</li>
+                            <li>Provide temporary modular classrooms where needed - $100M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Phase 2 (Years 4-7): Modernization</strong>
+                        <ul>
+                            <li>Build 50 new schools in growing areas - $2B</li>
+                            <li>Complete renovation of 300 existing schools - $1.5B</li>
+                            <li>Technology infrastructure (fiber optic to every school) - $200M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Phase 3 (Years 8-10): Innovation Centers</strong>
+                        <ul>
+                            <li>Regional STEM centers (6 locations) - $300M</li>
+                            <li>Arts and humanities centers (4 locations) - $200M</li>
+                            <li>Agricultural research facilities (3 locations) - $150M</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>10-Year Funding Strategy:</strong>
+                    <ul>
+                        <li>State bond issue (AAA rating allows 2.5% interest): $2B</li>
+                        <li>Federal infrastructure funds earmarked for schools: $1.2B</li>
+                        <li>Public-private partnerships (naming rights, equipment): $300M</li>
+                        <li>Energy savings from efficiency upgrades: $150M over 10 years</li>
+                        <li>Land sales from consolidated properties: $100M</li>
+                        <li>Total: $4.85B over 10 years ($485M annually)</li>
+                    </ul>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Current Mississippi</th>
+                            <th>Year 5 Projection</th>
+                            <th>Year 10 Goal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Teacher Vacancy Rate</td>
+                            <td>5.4%</td>
+                            <td>2.0%</td>
+                            <td>0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>4th Grade Reading Proficiency</td>
+                            <td>35%</td>
+                            <td>50%</td>
+                            <td>70%</td>
+                        </tr>
+                        <tr>
+                            <td>Graduation Rate</td>
+                            <td>83%</td>
+                            <td>88%</td>
+                            <td>92%</td>
+                        </tr>
+                        <tr>
+                            <td>College Readiness</td>
+                            <td>38%</td>
+                            <td>55%</td>
+                            <td>70%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="solution-card">
+                <h3>2. Healthcare Access: Saving Lives & Communities</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Rural Emergency Response (Launch in 90 Days)</h4>
+                <p><strong>Stop the Bleeding First:</strong></p>
+                <ul>
+                    <li><strong>Mobile Emergency Units (20 vehicles)</strong>
+                        <ul>
+                            <li>Each unit: 1 nurse practitioner, 1 paramedic, diagnostic equipment</li>
+                            <li>Coverage: 60 rural communities on rotating schedule</li>
+                            <li>Services: Urgent care, chronic disease management, preventive care</li>
+                            <li>Cost: $15M for vehicles and equipment, $8M annual operations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Telehealth Emergency Network</strong>
+                        <ul>
+                            <li>iPads and hotspots for 10,000 high-risk patients</li>
+                            <li>24/7 access to UMMC specialists</li>
+                            <li>Remote monitoring for diabetes, heart disease, hypertension</li>
+                            <li>Cost: $5M setup, $2M annual</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pharmacy Desert Solution</strong>
+                        <ul>
+                            <li>Mail-order prescription program for rural residents</li>
+                            <li>Partner with Mississippi pharmacists for oversight</li>
+                            <li>90-day supplies to reduce refill challenges</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Immediate Funding Available:</strong>
+                    <ul>
+                        <li>ARPA funds designated for rural health: $23M ready now</li>
+                        <li>FCC Telehealth Program: $3M approved, awaiting deployment</li>
+                        <li>HRSA Rural Health grants: $5M annual</li>
+                        <li>Total Year 1: $31M fully funded</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>South Carolina Mobile Success:</strong> Their mobile health program reached 45,000 rural residents in Year 1. Emergency room visits dropped 28%. Diabetes control improved in 67% of patients. Three rural hospitals stayed open because reduced ER burden improved finances. Cost per patient: $215 vs. $1,400 for ER visits.
+                </div>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> Hospital Stabilization & Women's Health (Years 2-5)</h4>
+                <p><strong>Rebuilding the Healthcare Infrastructure:</strong></p>
+                <ul>
+                    <li><strong>Rural Hospital Rescue Package</strong>
+                        <ul>
+                            <li>Convert 10 struggling hospitals to Rural Emergency Hospitals (new Medicare designation)</li>
+                            <li>Monthly facility payments of $270,000 from Medicare</li>
+                            <li>5% payment increase for emergency services</li>
+                            <li>State supplements: $2M per facility for equipment upgrades</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maternal Health Centers of Excellence</strong>
+                        <ul>
+                            <li>4 regional centers with 24/7 OB coverage</li>
+                            <li>High-risk pregnancy specialists via telehealth</li>
+                            <li>Transportation network for expecting mothers</li>
+                            <li>Doula and midwife training programs (200 new providers)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Community Health Worker Army</strong>
+                        <ul>
+                            <li>Train and deploy 1,000 workers ($35,000 salary + benefits)</li>
+                            <li>Each covers 250 high-risk residents</li>
+                            <li>Home visits, medication compliance, appointment scheduling</li>
+                            <li>Diabetes prevention program reaching 50,000 residents</li>
+                        </ul>
+                    </li>
+                    <li><strong>Medical Debt Relief Program</strong>
+                        <ul>
+                            <li>Partner with RIP Medical Debt nonprofit</li>
+                            <li>$10M state investment erases $1B in medical debt</li>
+                            <li>Priority: Families under 200% poverty line</li>
+                            <li>Affects 150,000 Mississippi families</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Strategic Healthcare Funding:</strong>
+                    <ul>
+                        <li>Medicaid expansion (90% federal match): $600M federal annually</li>
+                        <li>CDC chronic disease grants: $25M over 3 years</li>
+                        <li>Maternal health state action grants: $15M</li>
+                        <li>Private foundation support (Blue Cross, Robert Wood Johnson): $20M</li>
+                        <li>Tobacco settlement funds reallocation: $30M annually</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Louisiana Medicaid Expansion Impact:</strong> After expansion, Louisiana saw 100,000+ residents gain coverage, rural hospitals stabilized with $3.5B in new revenue, 19% drop in uncompensated care, diabetes diagnoses increased 27% (catching disease early), and created 19,000 healthcare jobs. Their maternal mortality dropped 25% in three years.
+                </div>
+                
+                <h4><span class="category-label transformational">Transformational Change</span> Universal Healthcare Access (10-Year Vision)</h4>
+                <p><strong>A Healthy Mississippi:</strong></p>
+                <ul>
+                    <li><strong>Regional Medical Hubs (6 locations)</strong>
+                        <ul>
+                            <li>Full-service hospitals with specialty care</li>
+                            <li>Cancer treatment, cardiac care, neurology</li>
+                            <li>Medical residency programs to train doctors locally</li>
+                            <li>Public-private partnerships with major health systems</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mental Health Revolution</strong>
+                        <ul>
+                            <li>Crisis stabilization units in every county</li>
+                            <li>School-based mental health (therapist in every school)</li>
+                            <li>Addiction treatment centers (8 regional facilities)</li>
+                            <li>Peer support specialists (500 positions)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Prescription Drug Manufacturing</strong>
+                        <ul>
+                            <li>Partner with state universities to produce generic drugs</li>
+                            <li>Focus: insulin, antibiotics, blood pressure medications</li>
+                            <li>Sell at cost to Mississippi residents</li>
+                            <li>Potential savings: $200M annually for patients</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Health Metric</th>
+                            <th>Current</th>
+                            <th>5-Year Target</th>
+                            <th>10-Year Goal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Uninsured Rate</td>
+                            <td>12.4%</td>
+                            <td>6%</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td>Infant Mortality (per 1,000)</td>
+                            <td>8.8</td>
+                            <td>6.5</td>
+                            <td>4.5</td>
+                        </tr>
+                        <tr>
+                            <td>Rural Hospital Closures</td>
+                            <td>6 since 2013</td>
+                            <td>0 new closures</td>
+                            <td>10 reopened</td>
+                        </tr>
+                        <tr>
+                            <td>Primary Care Access</td>
+                            <td>54 underserved counties</td>
+                            <td>30 counties</td>
+                            <td>10 counties</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="solution-card">
+                <h3>3. Infrastructure Rebuild: Foundation for Growth</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Jackson Water Crisis Resolution (6 Months)</h4>
+                <p><strong>Emergency Action Plan:</strong></p>
+                <ul>
+                    <li><strong>Federal Emergency Management</strong>
+                        <ul>
+                            <li>EPA takes temporary control with $450M federal investment</li>
+                            <li>Army Corps of Engineers oversees repairs</li>
+                            <li>24/7 water quality monitoring and public reporting</li>
+                            <li>Bottled water distribution continues until safe</li>
+                        </ul>
+                    </li>
+                    <li><strong>Immediate Repairs</strong>
+                        <ul>
+                            <li>Replace pumps at O.B. Curtis plant: $25M</li>
+                            <li>Fix water mains causing 40% water loss: $50M</li>
+                            <li>Install backup systems: $35M</li>
+                            <li>Emergency interconnections with nearby systems: $15M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Workforce Development</strong>
+                        <ul>
+                            <li>Train 100 water operators at $55,000 starting salary</li>
+                            <li>Partner with Jackson State for water engineering program</li>
+                            <li>Create apprenticeship pipeline with high schools</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Flint's Recovery Blueprint:</strong> After their water crisis, Flint received $650M in federal and state aid. They replaced 10,000 lead service lines, rebuilt treatment plants, and haven't had a violation in 3 years. Key lesson: Federal oversight and funding worked where local resources failed.
+                </div>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> Connecting Mississippi - Broadband & Roads (Years 2-5)</h4>
+                <p><strong>21st Century Infrastructure:</strong></p>
+                <ul>
+                    <li><strong>Broadband Revolution</strong>
+                        <ul>
+                            <li>Create Mississippi Broadband Authority with $1.2B federal funds</li>
+                            <li>Fiber to every community over 500 people: $800M</li>
+                            <li>Low-orbit satellite for remote areas: $100M</li>
+                            <li>Free WiFi in all public buildings and parks: $50M</li>
+                            <li>Digital literacy training for 100,000 residents: $20M</li>
+                            <li>"Dig Once" policy: Install conduit during all road work</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bridge & Road Rescue</strong>
+                        <ul>
+                            <li>Fix 500 most dangerous bridges: $2B over 4 years</li>
+                            <li>Repave 3,000 miles of critical roads: $1.5B</li>
+                            <li>Create Mississippi Infrastructure Bank for local matching funds</li>
+                            <li>Weight station upgrades to preserve road investments: $25M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rural Water Systems</strong>
+                        <ul>
+                            <li>Consolidate 150 failing small systems into 30 regional systems</li>
+                            <li>Professional management reducing costs 40%</li>
+                            <li>EPA grants for consolidation: $300M available</li>
+                            <li>State revolving loan fund: $200M at 0% interest</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Infrastructure Funding Secured:</strong>
+                    <ul>
+                        <li>Infrastructure Investment and Jobs Act: $3.6B for Mississippi</li>
+                        <li>BEAD broadband program: $1.2B allocated</li>
+                        <li>Highway Trust Fund: $650M annually</li>
+                        <li>EPA water infrastructure: $429M available</li>
+                        <li>USDA rural development: $200M annually</li>
+                        <li>Total 4-year funding: $4.8B available now</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Tennessee's Broadband Win:</strong> Tennessee invested $500M in rural broadband, connecting 95% of residents in 5 years. Results: 13,000 new remote jobs, $1.2B in economic growth, students' test scores increased 8%, and telehealth saved rural hospitals. Every $1 invested returned $3.50 in economic activity.
+                </div>
+                
+                <h4><span class="category-label transformational">Transformational Change</span> Complete System Overhaul (10-Year Plan)</h4>
+                <p><strong>Building for the Next Century:</strong></p>
+                <ul>
+                    <li><strong>Water/Sewer Modernization</strong>
+                        <ul>
+                            <li>Replace all lead pipes statewide: $2B</li>
+                            <li>Smart water systems with leak detection: $500M</li>
+                            <li>Wastewater treatment upgrades (all 348 systems): $3B</li>
+                            <li>Stormwater management for climate resilience: $1B</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transportation Revolution</strong>
+                        <ul>
+                            <li>High-speed rail: Memphis-Jackson-Gulf Coast: $8B</li>
+                            <li>Regional airports upgrade (4 locations): $400M</li>
+                            <li>Port expansion for global trade: $600M</li>
+                            <li>Electric vehicle charging network (500 stations): $100M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Energy Independence</strong>
+                        <ul>
+                            <li>Solar farms on abandoned agricultural land: 2,000 MW capacity</li>
+                            <li>Wind development in northwest counties: 500 MW</li>
+                            <li>Grid modernization and battery storage: $2B</li>
+                            <li>Energy efficiency retrofits for 100,000 homes: $500M</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Infrastructure Metric</th>
+                            <th>Current Grade</th>
+                            <th>5-Year Target</th>
+                            <th>10-Year Goal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Overall Infrastructure</td>
+                            <td>C-</td>
+                            <td>B-</td>
+                            <td>B+</td>
+                        </tr>
+                        <tr>
+                            <td>Broadband Access</td>
+                            <td>71%</td>
+                            <td>95%</td>
+                            <td>99%</td>
+                        </tr>
+                        <tr>
+                            <td>Safe Drinking Water</td>
+                            <td>78%</td>
+                            <td>95%</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Structurally Sound Bridges</td>
+                            <td>90%</td>
+                            <td>97%</td>
+                            <td>99.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="solution-card">
+                <h3>4. Economic Development: Prosperity for All</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Main Street Revival (Launch Immediately)</h4>
+                <p><strong>Revitalize Every Downtown:</strong></p>
+                <ul>
+                    <li><strong>Small Business Fast Track</strong>
+                        <ul>
+                            <li>One-stop online permitting (48-hour approval)</li>
+                            <li>First year fee waivers for new businesses</li>
+                            <li>$5,000 startup grants for 2,000 businesses: $10M</li>
+                            <li>Free legal and accounting help through law schools</li>
+                        </ul>
+                    </li>
+                    <li><strong>Empty Building Transformation</strong>
+                        <ul>
+                            <li>50% tax credits for renovating vacant buildings</li>
+                            <li>Fast-track historic preservation approvals</li>
+                            <li>Pop-up shop program: Free rent for 3 months</li>
+                            <li>Convert upper floors to affordable housing</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buy Local Campaign</strong>
+                        <ul>
+                            <li>State procurement: 25% must go to Mississippi small businesses</li>
+                            <li>Local currency programs keeping money circulating</li>
+                            <li>Farmers market expansion: Double SNAP benefits</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Clarksdale's Comeback:</strong> Ground Zero Blues Club sparked downtown revival. What started as one business became 20 new shops, 4 restaurants, and 3 hotels. Tourism increased 300%. Property values rose 45%. The key? One anchor business creating momentum, supported by city incentives.
+                </div>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> Innovation Economy (Years 2-5)</h4>
+                <p><strong>Creating Tomorrow's Jobs:</strong></p>
+                <ul>
+                    <li><strong>Innovation Districts</strong>
+                        <ul>
+                            <li>Jackson Tech Hub: Former mall becomes startup campus</li>
+                            <li>Gulf Coast Blue Economy: Marine technology center</li>
+                            <li>Golden Triangle Advanced Manufacturing: Robotics training</li>
+                            <li>Delta Agriculture Tech: Precision farming innovation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mississippi Venture Fund</strong>
+                        <ul>
+                            <li>$50M state seed fund leveraging $150M private capital</li>
+                            <li>Focus: Healthcare IT, AgTech, Clean Energy, Logistics</li>
+                            <li>Requirement: Companies must stay in Mississippi 10 years</li>
+                            <li>Expected: 50 companies, 5,000 jobs, $500M economic impact</li>
+                        </ul>
+                    </li>
+                    <li><strong>Workforce Revolution</strong>
+                        <ul>
+                            <li>Coding bootcamps in 15 cities: 3,000 graduates annually</li>
+                            <li>Apprenticeships with guaranteed jobs: 5,000 positions</li>
+                            <li>Community college free for in-demand fields</li>
+                            <li>Online University of Mississippi programs at half cost</li>
+                        </ul>
+                    </li>
+                    <li><strong>Remote Work Initiative</strong>
+                        <ul>
+                            <li>$10,000 relocation grants for remote workers</li>
+                            <li>Co-working spaces in 20 small towns</li>
+                            <li>Marketing Mississippi's low cost, high quality of life</li>
+                            <li>Target: 10,000 new remote residents</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Economic Development Funding:</strong>
+                    <ul>
+                        <li>Economic Development Administration grants: $75M</li>
+                        <li>New Markets Tax Credits: $200M in investment</li>
+                        <li>Opportunity Zone investments: $300M projected</li>
+                        <li>USDA Rural Business grants: $40M</li>
+                        <li>State economic development bonds: $100M</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Tulsa Remote Success:</strong> Oklahoma paid 2,000 remote workers $10,000 to relocate. Results: $62M in local income, 3 new jobs created per remote worker (coffee shops, services, etc.), housing market revitalized, and brain gain reversed. The program cost $20M but generated $150M in economic activity.
+                </div>
+                
+                <h4><span class="category-label transformational">Transformational Change</span> New Economy Mississippi (10-Year Vision)</h4>
+                <p><strong>From Last to Leading:</strong></p>
+                <ul>
+                    <li><strong>Green Energy Manufacturing Hub</strong>
+                        <ul>
+                            <li>Electric vehicle battery plant: 5,000 jobs</li>
+                            <li>Solar panel manufacturing: 2,000 jobs</li>
+                            <li>Wind turbine assembly: 1,500 jobs</li>
+                            <li>Recycling and circular economy center: 1,000 jobs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mississippi Research Triangle</strong>
+                        <ul>
+                            <li>Connect Jackson State, Ole Miss, Mississippi State</li>
+                            <li>Focus: Biomedical, Agricultural, Environmental research</li>
+                            <li>Tech transfer office commercializing discoveries</li>
+                            <li>Goal: 100 spin-off companies, 10,000 high-tech jobs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Global Trade Gateway</strong>
+                        <ul>
+                            <li>Expand Port of Gulfport for mega-ships</li>
+                            <li>Inland port in Jackson for distribution</li>
+                            <li>Free trade zone attracting international business</li>
+                            <li>Direct flights to major global markets</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p><strong>Expected 10-Year Economic Impact:</strong></p>
+                <div>
+                    <span class="impact-metric">100,000 new jobs created</span>
+                    <span class="impact-metric">Median income increase to $65,000</span>
+                    <span class="impact-metric">Poverty rate reduced to 10%</span>
+                    <span class="impact-metric">$15B in new investment</span>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <h3>5. Tax Reform: Fair System That Works</h3>
+                
+                <h4><span class="category-label transformational">Transformational Change</span> Grocery Tax Elimination (5-Year Phase-Out)</h4>
+                <p><strong>Putting Money Back in Family Budgets:</strong></p>
+                <ul>
+                    <li><strong>Phase-Out Schedule</strong>
+                        <ul>
+                            <li>Year 1: Reduce from 7% to 5.5% (saves families $156/year)</li>
+                            <li>Year 2: Drop to 4% (saves $312/year)</li>
+                            <li>Year 3: Reduce to 2.5% (saves $468/year)</li>
+                            <li>Year 4: Lower to 1% (saves $624/year)</li>
+                            <li>Year 5: Complete elimination (saves $780/year)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Revenue Replacement Plan</strong>
+                        <ul>
+                            <li>Close corporate tax loopholes: $125M annually</li>
+                            <li>Online sales tax collection: $200M annually</li>
+                            <li>Luxury tax on boats/planes over $250K: $30M</li>
+                            <li>Cannabis tax (if legalized): $100M annually</li>
+                            <li>Economic growth from increased spending: $75M</li>
+                        </ul>
+                    </li>
+                    <li><strong>Low-Income Protection</strong>
+                        <ul>
+                            <li>Quarterly rebates for families under $50,000</li>
+                            <li>SNAP recipients get immediate full elimination</li>
+                            <li>Senior citizens receive monthly credits</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Real Family Impact - Pearl Family of Four:</strong> The Johnsons spend $800/month on groceries ($9,600/year). Current tax: $672. After elimination: $0. That's two months of car payments, or school supplies and clothes for three kids, or emergency fund for home repairs. Multiply by 200,000 families: $134M staying in local economy.
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Grocery Tax</th>
+                            <th>Result After Elimination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kansas</td>
+                            <td>Eliminated 2022</td>
+                            <td>$500M in increased consumer spending</td>
+                        </tr>
+                        <tr>
+                            <td>Illinois</td>
+                            <td>Suspended 2022</td>
+                            <td>Grocery sales up 8%</td>
+                        </tr>
+                        <tr>
+                            <td>Arkansas</td>
+                            <td>Phasing out</td>
+                            <td>Projected $250M economic boost</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="solution-card">
+                <h3>6. Racial Equity: Justice and Opportunity</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Economic Justice Initiative</h4>
+                <p><strong>Closing the Wealth Gap:</strong></p>
+                <ul>
+                    <li><strong>Minority Business Acceleration</strong>
+                        <ul>
+                            <li>$25M dedicated loan fund at 2% interest</li>
+                            <li>State contracts: 25% to minority-owned businesses</li>
+                            <li>Free business incubators in majority-Black cities</li>
+                            <li>Mentorship matching with established businesses</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banking Access Program</strong>
+                        <ul>
+                            <li>Partner with credit unions for branches in banking deserts</li>
+                            <li>State-backed micro-loans up to $10,000</li>
+                            <li>Financial literacy mandatory in high schools</li>
+                            <li>Ban on predatory payday lending (cap at 36% APR)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Property Tax Reform</strong>
+                        <ul>
+                            <li>Reassess properties to fix decades of discriminatory assessments</li>
+                            <li>Circuit breaker limiting tax to 2% of income for seniors</li>
+                            <li>Heir property legal assistance to prevent land loss</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Jackson Success Story:</strong> Farish Street entrepreneur Cassandra Williams received a $15,000 minority business loan to open a soul food restaurant. She now employs 12 people, bought the building next door for expansion, and mentors three other Black women starting businesses. "Access to capital changed everything," she says. "Not charity—just a fair chance."
+                </div>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> Educational Equity (5-Year Plan)</h4>
+                <p><strong>Every Child, Every Chance:</strong></p>
+                <ul>
+                    <li><strong>Funding Formula Revolution</strong>
+                        <ul>
+                            <li>Base funding on student need, not property values</li>
+                            <li>Weight factors: poverty (1.4x), English learners (1.3x), special needs (2.0x)</li>
+                            <li>No district receives less than current funding</li>
+                            <li>High-poverty districts see 35% increase</li>
+                        </ul>
+                    </li>
+                    <li><strong>Teacher Diversity Initiative</strong>
+                        <ul>
+                            <li>Full scholarships for 500 minority education majors annually</li>
+                            <li>Alternative certification for career-changers</li>
+                            <li>Retention bonuses for teachers of color in high-need schools</li>
+                            <li>Goal: Teaching force matches student demographics by 2030</li>
+                        </ul>
+                    </li>
+                    <li><strong>Advanced Opportunity Programs</strong>
+                        <ul>
+                            <li>AP courses in every high school via distance learning</li>
+                            <li>SAT/ACT prep free for all students</li>
+                            <li>Guaranteed college admission for top 10% of every school</li>
+                            <li>Full rides to state schools for family income under $65,000</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p><strong>Measurable Equity Goals:</strong></p>
+                <div>
+                    <span class="impact-metric">Black-white achievement gap cut 50%</span>
+                    <span class="impact-metric">College enrollment gap eliminated</span>
+                    <span class="impact-metric">Teacher diversity increased 40%</span>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <h3>7. Climate Resilience: Protecting Our Future</h3>
+                
+                <h4><span class="category-label strategic">Strategic Investment</span> Coastal & Agricultural Protection</h4>
+                <p><strong>Adapting to New Realities:</strong></p>
+                <ul>
+                    <li><strong>Coastal Defense System</strong>
+                        <ul>
+                            <li>Restore 50,000 acres of wetlands: Natural storm buffer</li>
+                            <li>Living shorelines protecting 100 miles of coast</li>
+                            <li>Elevate 5,000 frequently flooded homes</li>
+                            <li>Buyout program for repetitive loss properties</li>
+                            <li>Improved hurricane evacuation routes</li>
+                        </ul>
+                    </li>
+                    <li><strong>Agricultural Evolution</strong>
+                        <ul>
+                            <li>Drought-resistant crop research at Mississippi State</li>
+                            <li>Precision agriculture reducing water use 30%</li>
+                            <li>Cover crop incentives preventing soil erosion</li>
+                            <li>Alternative crops for changing climate (pecans, fruits)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clean Energy Transition</strong>
+                        <ul>
+                            <li>Solar gardens in every county: Community ownership</li>
+                            <li>Wind farms in northwestern counties: 2,000 jobs</li>
+                            <li>Battery manufacturing for grid storage: 1,500 jobs</li>
+                            <li>Weatherization for 100,000 homes: Save $400/year each</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="funding-box">
+                    <strong>Climate Funding Available:</strong>
+                    <ul>
+                        <li>Gulf of Mexico restoration funds: $750M over 15 years</li>
+                        <li>FEMA hazard mitigation: $200M</li>
+                        <li>USDA climate-smart agriculture: $100M</li>
+                        <li>DOE clean energy programs: $300M</li>
+                        <li>EPA environmental justice grants: $50M</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Biloxi's Green Infrastructure:</strong> After Katrina, Biloxi rebuilt with resilience. Their living shoreline reduced storm surge 70% during Hurricane Ida. Green infrastructure captured 2 million gallons of stormwater. Solar panels on public buildings saved $400,000 annually. The city is now a model for climate adaptation, attracting $50M in federal grants.
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <h3>8. Community Safety & Support</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Domestic Violence Response</h4>
+                <p><strong>Safety Nets That Save Lives:</strong></p>
+                <ul>
+                    <li><strong>Emergency Shelter Expansion</strong>
+                        <ul>
+                            <li>Add 500 emergency beds statewide: $15M</li>
+                            <li>Pet-friendly shelters (many stay in danger for pets)</li>
+                            <li>Transitional housing: 6 months support</li>
+                            <li>Rural safe houses in 20 counties</li>
+                        </ul>
+                    </li>
+                    <li><strong>Legal Protection Fast-Track</strong>
+                        <ul>
+                            <li>24-hour protection order processing</li>
+                            <li>Free attorneys for all victims</li>
+                            <li>Court advocates in every county</li>
+                            <li>GPS monitoring for all protective orders</li>
+                        </ul>
+                    </li>
+                    <li><strong>Economic Empowerment</strong>
+                        <ul>
+                            <li>Emergency funds: $2,000 for immediate relocation</li>
+                            <li>Job training specifically for survivors</li>
+                            <li>Childcare assistance during court proceedings</li>
+                            <li>Credit repair and financial counseling</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Madison County Success:</strong> After implementing comprehensive DV response, domestic homicides dropped 60% in three years. The key? Combining emergency housing, legal help, and economic support. Sarah, a survivor, says: "The job training saved my life. I could finally leave because I knew I could support my kids."
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <h3>9. Government Accountability</h3>
+                
+                <h4><span class="category-label immediate">Immediate Win</span> Transparency Revolution</h4>
+                <p><strong>Your Money, Your Right to Know:</strong></p>
+                <ul>
+                    <li><strong>Open Checkbook Mississippi</strong>
+                        <ul>
+                            <li>Every payment over $100 online in real-time</li>
+                            <li>Searchable by vendor, agency, purpose</li>
+                            <li>Contract details and performance metrics</li>
+                            <li>Automatic alerts for suspicious patterns</li>
+                        </ul>
+                    </li>
+                    <li><strong>Inspector General Network</strong>
+                        <ul>
+                            <li>Independent IGs for major agencies</li>
+                            <li>Whistleblower rewards up to $100,000</li>
+                            <li>Quarterly public reports required</li>
+                            <li>Criminal referral authority</li>
+                        </ul>
+                    </li>
+                    <li><strong>Citizen Oversight Boards</strong>
+                        <ul>
+                            <li>Random selection like jury duty</li>
+                            <li>Review all contracts over $1 million</li>
+                            <li>Veto power over suspicious deals</li>
+                            <li>Public hearings streamed online</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>After Welfare Scandal Reform:</strong> Following the $94 million welfare scandal, new oversight prevented $12M in questionable spending in Year 1 alone. An anonymous tip line caught three fraudulent contracts. Public trust surveys show 40% increase in confidence. "Sunshine really is the best disinfectant," says ethics director.
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Understanding the Money: Real Numbers, Real Solutions</h2>
+            
+            <div class="stat-highlight">
+                <h4>Mississippi's Current Budget Reality</h4>
+                <ul>
+                    <li><strong>Total State Budget:</strong> $7.6 billion (FY 2024)</li>
+                    <li><strong>Education:</strong> $3.95 billion (52%)</li>
+                    <li><strong>Health/Human Services:</strong> $1.9 billion (25%)</li>
+                    <li><strong>Corrections:</strong> $608 million (8%)</li>
+                    <li><strong>Transportation:</strong> $456 million (6%)</li>
+                    <li><strong>All Other:</strong> $684 million (9%)</li>
+                </ul>
+            </div>
+            
+            <div class="funding-box">
+                <h4>Available Federal Funds (Already Allocated to Mississippi)</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Amount</th>
+                            <th>Timeline</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Infrastructure Act</td>
+                            <td>$3.6B</td>
+                            <td>2022-2027</td>
+                            <td>$1.2B unspent</td>
+                        </tr>
+                        <tr>
+                            <td>ARPA Recovery</td>
+                            <td>$1.8B</td>
+                            <td>Through 2024</td>
+                            <td>$900M available</td>
+                        </tr>
+                        <tr>
+                            <td>Broadband Expansion</td>
+                            <td>$1.2B</td>
+                            <td>2023-2028</td>
+                            <td>Planning phase</td>
+                        </tr>
+                        <tr>
+                            <td>Education Grants</td>
+                            <td>$658M</td>
+                            <td>2023-2025</td>
+                            <td>$400M unallocated</td>
+                        </tr>
+                        <tr>
+                            <td>Gulf Restoration</td>
+                            <td>$750M</td>
+                            <td>2017-2032</td>
+                            <td>$500M remaining</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p style="margin-top: 2rem;"><strong>The Bottom Line:</strong> Mississippi has access to over $8 billion in federal funds already allocated but not yet spent. Combined with strategic state investments and public-private partnerships, we can transform our state without breaking the budget. Every dollar invested in education returns $7 in economic growth. Every dollar in infrastructure returns $3. This isn't spending—it's investing in Mississippi's future.</p>
+        </section>
+        
+        <section class="section" id="resources">
+            <h2>Resources & Community Action</h2>
+            <p style="margin-bottom: 2rem;">
+                Change happens when communities come together. Here's how you can make a difference today:
+            </p>
+            
+            <div class="solution-card">
+                <h3>Get Help Now - Emergency Resources</h3>
+                <ul>
+                    <li><strong>Crisis Hotline:</strong> Call or text 988 for mental health emergencies</li>
+                    <li><strong>Domestic Violence:</strong> 1-800-898-3234 (24/7 confidential)</li>
+                    <li><strong>Food Emergency:</strong> Call 211 for nearest food bank</li>
+                    <li><strong>Utility Shutoff:</strong> LIHEAP assistance: 1-800-421-0589</li>
+                    <li><strong>Medical Emergency Without Insurance:</strong> Federally Qualified Health Centers: findahealthcenter.hrsa.gov</li>
+                    <li><strong>Housing Crisis:</strong> Mississippi Home Corporation: 601-718-4636</li>
+                    <li><strong>Legal Aid:</strong> Mississippi Legal Services: 1-800-498-1804</li>
+                </ul>
+            </div>
+            
+            <div class="solution-card">
+                <h3>Join the Movement - Local Action</h3>
+                <ul>
+                    <li><strong>Town Halls:</strong> Find schedules at your city/county websites</li>
+                    <li><strong>School Board Meetings:</strong> Usually first Tuesday monthly - public comment welcome</li>
+                    <li><strong>Community Organizations:</strong>
+                        <ul>
+                            <li>Mississippi NAACP: Racial justice advocacy</li>
+                            <li>Mississippi Center for Justice: Legal reform</li>
+                            <li>Parents for Public Schools: Education advocacy</li>
+                            <li>Working Together Jackson: Community organizing</li>
+                        </ul>
+                    </li>
+                    <li><strong>Volunteer Opportunities:</strong>
+                        <ul>
+                            <li>Habitat for Humanity: Build homes (habitatms.org)</li>
+                            <li>Literacy volunteers: Teach reading (literacymidsouth.org)</li>
+                            <li>Food banks: Sort and distribute (feedingamerica.org)</li>
+                            <li>Senior centers: Companion programs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="solution-card">
+                <h3>Make Your Voice Heard</h3>
+                <ul>
+                    <li><strong>Contact Your Representatives:</strong>
+                        <ul>
+                            <li>Find them: legislature.ms.gov/legislators/</li>
+                            <li>Call during session: Most effective</li>
+                            <li>Email template: "I'm a constituent in [City] and I support/oppose..."</li>
+                            <li>Visit local offices: Face-to-face matters most</li>
+                        </ul>
+                    </li>
+                    <li><strong>Start or Sign Petitions:</strong>
+                        <ul>
+                            <li>Ballot initiatives: Need 106,000 signatures</li>
+                            <li>Local petitions: Often need just 1,000</li>
+                            <li>Online platforms: Change.org/mississippi</li>
+                        </ul>
+                    </li>
+                    <li><strong>Media Engagement:</strong>
+                        <ul>
+                            <li>Letters to editor: 200-word limit most papers</li>
+                            <li>Call radio shows: Local talk radio wants callers</li>
+                            <li>Social media: Tag representatives and use #MSLeg</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="solution-card">
+                <h3>Resources for Businesses</h3>
+                <ul>
+                    <li><strong>Small Business Development:</strong> Mississippi SBDC - Free consulting (msbdc.org)</li>
+                    <li><strong>Loans and Grants:</strong>
+                        <ul>
+                            <li>Mississippi Development Authority: Low-interest loans</li>
+                            <li>USDA Rural Development: Grants up to $500,000</li>
+                            <li>Minority Business Alliance: Special programs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Training Programs:</strong>
+                        <ul>
+                            <li>WIN Job Centers: Free workforce training</li>
+                            <li>Community colleges: Customized business training</li>
+                            <li>SCORE mentors: Free business advice</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section" id="updates">
+            <h2>News & Updates</h2>
+            
+            <div class="issue-card">
+                <h4>Recent Wins Worth Celebrating</h4>
+                <ul>
+                    <li><strong>January 2025:</strong> Amazon opens 1,000-job distribution center in Canton</li>
+                    <li><strong>December 2024:</strong> Federal approval for $95M in Gulf Coast infrastructure</li>
+                    <li><strong>November 2024:</strong> Mississippi reading scores improve to 35th nationally (from 45th)</li>
+                    <li><strong>October 2024:</strong> Three rural hospitals saved through USDA partnership</li>
+                    <li><strong>September 2024:</strong> Broadband expansion reaches 50,000 new homes</li>
+                </ul>
+            </div>
+            
+            <div class="issue-card">
+                <h4>Upcoming Opportunities - Mark Your Calendar</h4>
+                <ul>
+                    <li><strong>February 15, 2025:</strong> Small business innovation grant deadline ($5,000-$50,000)</li>
+                    <li><strong>March 1, 2025:</strong> Community input sessions for broadband mapping (all counties)</li>
+                    <li><strong>March 15, 2025:</strong> Teacher recruitment fair - $10,000 signing bonuses available</li>
+                    <li><strong>April 1, 2025:</strong> Weatherization program opens - free home upgrades</li>
+                    <li><strong>April 15, 2025:</strong> Property tax relief applications for seniors due</li>
+                    <li><strong>May 1, 2025:</strong> Summer youth employment program registration begins</li>
+                </ul>
+            </div>
+            
+            <div class="issue-card">
+                <h4>Urgent Action Needed</h4>
+                <ul>
+                    <li><strong>Water Systems:</strong> EPA hearings on infrastructure funds - February 20-22 (public comment needed)</li>
+                    <li><strong>Education:</strong> School district consolidation proposals - Community input sessions this month</li>
+                    <li><strong>Healthcare:</strong> Rural hospital board seeking community members - Apply by February 28</li>
+                    <li><strong>Economic Development:</strong> Innovation district planning - Survey at mda.ms.gov/survey</li>
+                    <li><strong>Housing:</strong> Fair housing complaints deadline for 2024 issues - March 31</li>
+                </ul>
+            </div>
+        </section>
+        
+        <div class="cta-section">
+            <h2 style="color: white; border: none; text-align: center;">Building a Mississippi That Works for Everyone</h2>
+            <p style="font-size: 1.3rem; margin: 2rem auto; max-width: 800px;">
+                The challenges are real. The solutions are ready. The funding exists. All we need is the will to act.
+            </p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                Whether you're from the Delta or the Pine Belt, the Coast or the Hills, we all want the same things: good jobs, safe communities, excellent schools, and opportunity for our children. These aren't Democratic or Republican ideas—they're Mississippi ideas.
+            </p>
+            <div>
+                <a href="#resources" class="button">Get Involved Today</a>
+                <a href="#solutions" class="button">Review Solutions</a>
+                <a href="#" class="button" onclick="window.print(); return false;">Print & Share</a>
+            </div>
+            <p style="margin-top: 3rem; font-size: 1.2rem; font-style: italic;">
+                "Mississippi has given America its greatest music, literature, and culture. Now it's time to give Mississippians the future they deserve. This is our moment. This is our mission. This is our Mississippi."
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.1rem; font-weight: bold;">Mississippi Community Resource Hub</p>
+            <p style="margin-top: 1rem;">
+                A Nonpartisan Information Source for All Mississippians
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                This site provides factual information about Mississippi's challenges and evidence-based solutions.<br>
+                It is not affiliated with any political campaign, party, or candidate.
+            </p>
+            <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 4px;">
+                <strong>Share This Resource:</strong> Every Mississippian deserves to know what's possible. Share this site with friends, family, neighbors, and community groups. Knowledge is power, and power belongs to the people.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                Data sources: U.S. Census Bureau, Mississippi Department of Education, Mississippi State Department of Health,<br>
+                EPA, USDA, Federal Reserve, Mississippi Development Authority, and nonprofit research organizations.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animations
+        document.querySelectorAll('.issue-card, .solution-card, .stat-highlight, .example-box').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
